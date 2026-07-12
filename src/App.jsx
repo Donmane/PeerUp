@@ -1,9 +1,16 @@
 import './index.css'
-
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Login from "./pages/login";
+import Home from "./pages/home"
 function App() {
   return (
-    <div className='bg-red-500'>App</div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />}/>
+        <Route path='/home' element={<Home/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
