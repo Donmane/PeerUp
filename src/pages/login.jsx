@@ -199,6 +199,27 @@ function Login() {
               </svg>
             </Link>
           </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/home"
+              className="text-sm font-medium text-brand-muted hover:text-brand-amber transition-colors duration-200 inline-flex items-center gap-1.5 hover:underline underline-offset-4"
+            >
+              Sign in later
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
