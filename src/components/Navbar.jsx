@@ -24,14 +24,15 @@ function Navbar() {
     <nav>
         {user?(
             <ul>
-                <li>Home</li>
-                <li>Newpost</li>
-                <button>Logout</button>
+                <Link to={"/home"}> <li> Home</li></Link>
+                <Link to={"/newpost"}> <li> New post</li></Link>
+                <button onClick={handleLogout}>Logout</button>
             </ul>
         ): (
             <ul>
-            <li>Login</li>
-            <li>Signup</li>
+
+                <Link to={"/signup"}> <li> Signup</li></Link>
+                <Link to={"/"}> <li> Login</li></Link>
             </ul>
         )}
     </nav>
