@@ -7,6 +7,9 @@ function Navbar() {
     useEffect(()=>{
         const getuser = async () => {
             const {data,error} = await supabase.auth.getUser()
+            if (error) {
+                throw error
+            }
             if (data.user) {
                 setUser(data.user)
             }
