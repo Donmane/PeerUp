@@ -8,7 +8,8 @@ function Navbar() {
         const getuser = async () => {
             const {data,error} = await supabase.auth.getUser()
             if (error) {
-                throw error
+                console.log(error);
+                 
             }
             if (data.user) {
                 setUser(data.user)
@@ -21,22 +22,27 @@ function Navbar() {
     const handleLogout = async () =>{
         await supabase.auth.signOut()
         setUser(null)
-        navigate('/')
+        navigate('/home')
     }
   return (
     <nav>
+        <Link to={"/home"}>Peerup</Link>
         {user?(
             <ul>
-                <Link to={"/home"}> <li> Home</li></Link>
-                <Link to={"/newpost"}> <li> New post</li></Link>
+                <li><Link to={"/home"}>Home</Link></li>
+                <li><Link to={"/newpost"}> New post</Link></li>
                 <button onClick={handleLogout}>Logout</button>
             </ul>
         ): (
-            <ul>
+            <nav>
 
-                <Link to={"/signup"}> <li> Signup</li></Link>
-                <Link to={"/"}> <li> Login</li></Link>
+            <Link to={"/home"}>Peerup</Link>
+            <ul>
+                <li><Link to={"/signup"}> Signup</Link></li>
+                <li><Link to={"/"}> Login</Link></li>
             </ul>
+                        </nav>
+
         )}
     </nav>
   )
