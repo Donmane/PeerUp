@@ -204,7 +204,7 @@ function Login() {
               to="/home"
               className="text-sm font-medium text-brand-muted hover:text-brand-amber transition-colors duration-200 inline-flex items-center gap-1.5 hover:underline underline-offset-4"
             >
-              Sign in later
+             Browse as a guest
               <svg
                 className="w-4 h-4"
                 fill="none"
