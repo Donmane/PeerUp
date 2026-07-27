@@ -16,8 +16,10 @@ export default {
           muted: '#a89f94',
           error: '#ef4444',
         }
-      }
-
+      },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+      },
     },
   },
   plugins: [],
