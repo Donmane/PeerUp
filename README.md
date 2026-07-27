@@ -1,16 +1,88 @@
-# React + Vite
+# PeerUp — Find Your Study Tribe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A student study help notice board where you can post what you're stuck on and connect with peers who can help. Built with React and Supabase.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 [https://peer-up-eight.vercel.app/](https://peer-up-eight.vercel.app/)
 
-## React Compiler
+## What It Is
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+PeerUp is a notice board for students. If you missed a lecture, struggling with a topic, or just need someone to study with — you post your request and other students can reach out directly via email. No in-app messaging, no complexity. Just post, connect, and study.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse all study requests without signing in
+- Sign up and post your own help requests
+- Search posts by subject in real time
+- Contact the poster directly via email with one click
+- Delete your own posts when you no longer need help
+- Clean warm dark UI that actually feels like a safe space
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React + Vite | Frontend framework and build tool |
+| Tailwind CSS v3 | Styling |
+| React Router DOM | Client-side navigation |
+| Supabase | Backend, PostgreSQL database, and authentication |
+| Vercel | Deployment and hosting |
+| GitHub | Version control |
+
+## How It Works
+
+Anyone can visit PeerUp and browse all posted study requests. To post a request or delete your own posts, you need to create an account. When you post, your email is attached to the request so interested students can contact you directly — no in-app chat needed.
+
+## Database Structure
+
+One table powers the whole app:
+
+| Column | Type | Purpose |
+|---|---|---|
+| id | int8 | Auto-generated primary key |
+| created_at | timestamp | Auto-generated creation time |
+| subject | text | The subject or topic e.g. MTH 211 |
+| description | text | What the student needs help with |
+| email | text | Poster's email for contact |
+| user_id | uuid | Links the post to the logged in user |
+
+## How to Run Locally
+
+### Prerequisites
+- Node.js installed
+- A Supabase account
+
+### Installation
+
+```bash
+git clone https://github.com/Donmane/PeerUp.git
+cd PeerUp
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root directory:
+
+```
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### Run Locally
+
+```bash
+npm run dev
+```
+
+## Author
+
+**Daniel Edith-Agoye (Markaid)**
+- GitHub: [@Donmane](https://github.com/Donmane)
+- LinkedIn: [daniel-edith-agoye](https://linkedin.com/in/daniel-edith-agoye-30ba3a411)
+- Institution: Lead City University, Ibadan, Nigeria
+
+---
+
+Built as a personal portfolio project — a real solution to a real student problem.
