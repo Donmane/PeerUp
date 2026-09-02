@@ -12,7 +12,7 @@ PeerUp is a notice board for students. If you missed a lecture, struggling with 
 
 ## Features
 
-- Browse all study requests without signing in
+- Browse all study requests without signing in 
 - Sign up and post your own help requests
 - Search posts by subject in real time
 - Contact the poster directly via email with one click

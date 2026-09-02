@@ -13,7 +13,8 @@ function Signup() {
     e.preventDefault()
     setLoading(true)
     setError("")
-        
+         
+    
     const{error:signupError} = await supabase.auth.signUp({
         email,
         password,
